@@ -11,5 +11,6 @@
 
   "PL_TARGET_DENSITY": 0.60,
 
-  "RUN_LINTER": false
+  "RUN_LINTER": false,
+  "QUIT_ON_LINTER_ERRORS": false
 }
