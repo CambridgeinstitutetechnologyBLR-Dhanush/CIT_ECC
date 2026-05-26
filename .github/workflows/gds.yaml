@@ -13,6 +13,11 @@ jobs:
         with:
           submodules: recursive
 
+      - name: Create dummy lint log
+        run: |
+          mkdir -p runs/wokwi/dummy-verilator-lint
+          echo "dummy log" > runs/wokwi/dummy-verilator-lint/verilator-lint.log
+      
       - name: Build GDS
         uses: TinyTapeout/tt-gds-action@ttgf26a
         with:
