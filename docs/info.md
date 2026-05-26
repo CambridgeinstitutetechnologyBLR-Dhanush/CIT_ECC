@@ -1,20 +1,93 @@
-<!---
+# ECC Scalar Multiplication Accelerator
 
-This file is used to generate your project datasheet. Please fill in the information below and delete any unused
-sections.
+## Project Description
 
-You can also include images in this folder and reference them in the markdown. Each image must be less than
-512 kb in size, and the combined size of all images must be less than 1 MB.
--->
+This project implements a compact ECC-inspired scalar multiplication accelerator targeted for TinyTapeout 1x1 ASIC implementation.
 
-## How it works
+The design demonstrates:
+- lightweight ECC datapath concepts
+- cryptographic hardware acceleration
+- ASIC-oriented RTL design
+- OpenLane RTL-to-GDSII flow compatibility
 
-Explain how your project works
+The accelerator accepts:
+- a scalar key (k)
+- an ECC point input (Px)
 
-## How to test
+and produces:
+- a generated output point (Qx)
 
-Explain how to use your project
+using simplified ECC-inspired arithmetic.
 
-## External hardware
+---
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+# Design Goal
+
+The primary objective of this project is to demonstrate:
+- low-area cryptographic hardware design
+- TinyTapeout ASIC integration
+- secure hardware acceleration concepts
+- compact ECC datapath implementation
+
+---
+
+# Simplified ECC Operation
+
+The implemented operation is:
+
+Q = P + k
+
+Where:
+- P = input point
+- k = scalar/private key
+- Q = generated output
+
+This simplified model is used to:
+- reduce ASIC area
+- fit TinyTapeout 1x1 constraints
+- support OpenLane flow convergence
+- simplify educational verification
+
+---
+
+# Hardware Features
+
+- 4-bit ECC datapath
+- 8-bit input interface
+- 8-bit output interface
+- synchronous sequential logic
+- low-area architecture
+- TinyTapeout compatible
+
+---
+
+# ASIC Compatibility
+
+The project supports:
+- RTL simulation
+- synthesis
+- floorplanning
+- placement
+- clock tree synthesis
+- routing
+- GDSII generation
+
+using:
+- OpenLane
+- SKY130 PDK
+
+---
+
+# Applications
+
+- Secure communication systems
+- Lightweight cryptographic accelerators
+- Educational ASIC projects
+- TinyTapeout demonstrations
+- Hardware security learning
+
+---
+
+# Author
+
+Dhanush Kulkarni
