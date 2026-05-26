@@ -1,11 +1,11 @@
 yaml_version: 6
 
 project:
-  title: "ECC Scalar Multiplier"
+  title: "ECC Scalar Multiplication"
   author: "Dhanush Kulkarni"
-  description: "ECC Scalar Multiplication ASIC using TinyTapeout"
+  description: "ECC scalar multiplication accelerator"
   language: "Verilog"
-  clock_hz: 100000000
+  clock_hz: 1000000
 
   tiles: "1x1"
 
@@ -15,29 +15,31 @@ project:
     - "tt_um_ecc_scalar.v"
 
 pinout:
-  ui[0]: "Input bit 0"
-  ui[1]: "Input bit 1"
-  ui[2]: "Input bit 2"
-  ui[3]: "Input bit 3"
-  ui[4]: "Unused"
-  ui[5]: "Unused"
-  ui[6]: "Unused"
-  ui[7]: "Unused"
+  ui[0]: "input"
+  ui[1]: "input"
+  ui[2]: "input"
+  ui[3]: "input"
+  ui[4]: "input"
+  ui[5]: "input"
+  ui[6]: "input"
+  ui[7]: "input"
 
-  uo[0]: "Output bit 0"
-  uo[1]: "Output bit 1"
-  uo[2]: "Output bit 2"
-  uo[3]: "Output bit 3"
-  uo[4]: "Done"
-  uo[5]: "Unused"
-  uo[6]: "Unused"
-  uo[7]: "Unused"
+  uo[0]: "output"
+  uo[1]: "output"
+  uo[2]: "output"
+  uo[3]: "output"
+  uo[4]: "output"
+  uo[5]: "output"
+  uo[6]: "output"
+  uo[7]: "output"
 
-  uio[0]: "Bidirectional unused"
-  uio[1]: "Bidirectional unused"
-  uio[2]: "Bidirectional unused"
-  uio[3]: "Bidirectional unused"
-  uio[4]: "Bidirectional unused"
-  uio[5]: "Bidirectional unused"
-  uio[6]: "Bidirectional unused"
-  uio[7]: "Bidirectional unused"
+  uio[0]: "bidirectional"
+  uio[1]: "bidirectional"
+  uio[2]: "bidirectional"
+  uio[3]: "bidirectional"
+  uio[4]: "bidirectional"
+  uio[5]: "bidirectional"
+  uio[6]: "bidirectional"
+  uio[7]: "bidirectional"
+
+yaml_version_comment: "Tiny Tapeout project configuration"
