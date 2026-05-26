@@ -1,23 +1,23 @@
-# ECC Scalar Multiplication Accelerator
+# ECC Scalar Multiplication
 
 ## Project Description
 
-This project implements a compact ECC-inspired scalar multiplication accelerator targeted for TinyTapeout 1x1 ASIC implementation.
+This project implements a compact ECC Scalar Multiplication design targeted for TinyTapeout 1x1 ASIC implementation.
 
 The design demonstrates:
 - lightweight ECC datapath concepts
-- cryptographic hardware acceleration
+- cryptographic hardware processing
 - ASIC-oriented RTL design
 - OpenLane RTL-to-GDSII flow compatibility
 
-The accelerator accepts:
+The design accepts:
 - a scalar key (k)
 - an ECC point input (Px)
 
 and produces:
 - a generated output point (Qx)
 
-using simplified ECC-inspired arithmetic.
+using simplified ECC arithmetic.
 
 ---
 
@@ -26,8 +26,8 @@ using simplified ECC-inspired arithmetic.
 The primary objective of this project is to demonstrate:
 - low-area cryptographic hardware design
 - TinyTapeout ASIC integration
-- secure hardware acceleration concepts
-- compact ECC datapath implementation
+- ECC scalar processing concepts
+- compact datapath implementation
 
 ---
 
@@ -40,7 +40,7 @@ Q = P + k
 Where:
 - P = input point
 - k = scalar/private key
-- Q = generated output
+- Q = generated output point
 
 This simplified model is used to:
 - reduce ASIC area
@@ -81,7 +81,7 @@ using:
 # Applications
 
 - Secure communication systems
-- Lightweight cryptographic accelerators
+- Lightweight cryptographic hardware
 - Educational ASIC projects
 - TinyTapeout demonstrations
 - Hardware security learning
