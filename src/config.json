@@ -2,7 +2,7 @@
   "DESIGN_NAME": "tt_um_ecc_scalar",
 
   "VERILOG_FILES": [
-    "src/tt_um_ecc_scalar.v"
+    "dir::tt_um_ecc_scalar.v"
   ],
 
   "CLOCK_PORT": "clk",
