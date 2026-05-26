@@ -12,4 +12,32 @@ project:
   top_module: "tt_um_ecc_scalar"
 
   source_files:
-    - "tt_um_e
+    - "tt_um_ecc_scalar.v"
+
+pinout:
+  ui[0]: "Input bit 0"
+  ui[1]: "Input bit 1"
+  ui[2]: "Input bit 2"
+  ui[3]: "Input bit 3"
+  ui[4]: "Unused"
+  ui[5]: "Unused"
+  ui[6]: "Unused"
+  ui[7]: "Unused"
+
+  uo[0]: "Output bit 0"
+  uo[1]: "Output bit 1"
+  uo[2]: "Output bit 2"
+  uo[3]: "Output bit 3"
+  uo[4]: "Done"
+  uo[5]: "Unused"
+  uo[6]: "Unused"
+  uo[7]: "Unused"
+
+  uio[0]: "Bidirectional unused"
+  uio[1]: "Bidirectional unused"
+  uio[2]: "Bidirectional unused"
+  uio[3]: "Bidirectional unused"
+  uio[4]: "Bidirectional unused"
+  uio[5]: "Bidirectional unused"
+  uio[6]: "Bidirectional unused"
+  uio[7]: "Bidirectional unused"
