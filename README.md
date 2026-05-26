@@ -1,27 +1,27 @@
-# ECC Scalar Multiplication 
+# ECC Scalar Multiplication
 
 ## TinyTapeout 1x1 Tile ASIC Project
 
-This project implements a compact ECC-inspired Scalar Multiplication  designed for TinyTapeout ASIC implementation using Verilog HDL.
+This project implements a compact ECC Scalar Multiplication design using Verilog HDL for TinyTapeout ASIC implementation.
 
 The design demonstrates:
 - ECC scalar processing
-- public key style generation
-- secure cryptographic datapath concepts
-- RTL-to-GDS ASIC implementation flow
+- public key generation concepts
+- cryptographic datapath implementation
+- RTL-to-GDS ASIC flow
 
 ---
 
 # Project Overview
 
-The accelerator performs a simplified ECC-style operation:
+The design performs a simplified ECC-style operation:
 
 Q = P + k
 
 Where:
 - P = input elliptic curve point
 - k = scalar/private key
-- Q = generated output/public key
+- Q = generated output point
 
 This lightweight implementation is optimized for:
 - TinyTapeout 1x1 tile area
@@ -39,7 +39,7 @@ This lightweight implementation is optimized for:
 - OpenLane compatible
 - GTKWave simulation support
 - ASIC synthesis ready
-- Low-area ECC-inspired datapath
+- Low-area ECC datapath
 
 ---
 
@@ -47,7 +47,7 @@ This lightweight implementation is optimized for:
 
 | Module | Function |
 |--------|-----------|
-| tt_um_ecc_scalar | Top-level ECC scalar accelerator |
+| tt_um_ecc_scalar | Top-level ECC scalar multiplication module |
 
 ---
 
@@ -132,10 +132,9 @@ This project supports:
 # Applications
 
 - Secure V2X Communication
-- Cryptographic Hardware Education
-- ASIC Design Learning
-- ECC Accelerator Demonstration
-- Embedded Security Systems
+- Cryptographic Hardware Learning
+- ASIC Design Education
+- ECC Hardware Demonstration
 
 ---
 
