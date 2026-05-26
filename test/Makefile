@@ -1,21 +1,8 @@
-TOP_MODULE = tt_um_ecc_scalar
-TB_MODULE  = tb
+TOPLEVEL = tt_um_ecc_scalar
+MODULE = test
 
-IVERILOG = iverilog
-VVP      = vvp
+VERILOG_SOURCES = ../src/tt_um_ecc_scalar.v
 
-SRC = tt_um_ecc_scalar.v
-TB  = tb.v
+SIM = icarus
 
-all: sim
-
-sim:
-	$(IVERILOG) -o sim.out $(SRC) $(TB)
-	$(VVP) sim.out
-
-wave:
-	gtkwave tb.vcd tb.gtkw
-
-clean:
-	rm -f sim.out
-	rm -f tb.vcd
+include $(shell cocotb-config --makefiles)/Makefile.sim
