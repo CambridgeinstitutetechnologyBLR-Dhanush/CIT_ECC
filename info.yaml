@@ -1,7 +1,7 @@
 yaml_version: 6
 
 project:
-  title: "ECC Scalar Multiplication Accelerator"
+  title: "ECC Scalar Multiplication"
   author: "Dhanush Kulkarni"
   description: "TinyTapeout compatible ECC-inspired scalar multiplication accelerator for secure V2X cryptographic applications."
   language: "Verilog"
