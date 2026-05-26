@@ -1,16 +1,17 @@
 {
   "DESIGN_NAME": "tt_um_ecc_scalar",
 
-  "VERILOG_FILES": "dir::tt_um_ecc_scalar.v",
+  "VERILOG_FILES": [
+    "src/tt_um_ecc_scalar.v"
+  ],
 
   "CLOCK_PORT": "clk",
   "CLOCK_PERIOD": 10,
 
-  "FP_CORE_UTIL": 20,
-  "PL_TARGET_DENSITY": 0.50,
+  "FP_SIZING": "absolute",
+  "DIE_AREA": "0 0 161.00 111.52",
 
-  "DIE_AREA": "0 0 100 100",
+  "PL_TARGET_DENSITY": 0.60,
 
-  "RUN_LINTER": false,
-  "LINTER_INCLUDE_PDK_MODELS": false
+  "RUN_LINTER": false
 }
