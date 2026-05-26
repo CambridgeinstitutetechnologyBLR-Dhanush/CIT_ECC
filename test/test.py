@@ -1,40 +1,45 @@
-# SPDX-FileCopyrightText: © 2024 Tiny Tapeout
-# SPDX-License-Identifier: Apache-2.0
-
 import cocotb
+from cocotb.triggers import Timer
 from cocotb.clock import Clock
-from cocotb.triggers import ClockCycles
 
 
 @cocotb.test()
-async def test_project(dut):
-    dut._log.info("Start")
+async def test_ecc_scalar(dut):
 
-    # Set the clock period to 10 us (100 KHz)
-    clock = Clock(dut.clk, 10, unit="us")
+    # Start clock
+    clock = Clock(dut.clk, 10, units="ns")
     cocotb.start_soon(clock.start())
 
     # Reset
-    dut._log.info("Reset")
-    dut.ena.value = 1
-    dut.ui_in.value = 0
-    dut.uio_in.value = 0
     dut.rst_n.value = 0
-    await ClockCycles(dut.clk, 10)
+    dut.ui_in.value = 0
+
+    await Timer(20, units="ns")
+
     dut.rst_n.value = 1
 
-    dut._log.info("Test project behavior")
+    # -------------------------------------------------
+    # INPUT FORMAT
+    # ui_in[3:0] = Px
+    # ui_in[7:4] = k
+    # -------------------------------------------------
 
-    # Set the input values you want to test
-    dut.ui_in.value = 20
-    dut.uio_in.value = 30
+    # Example:
+    # Px = 3
+    # k  = 5
+    # Qx = 8
 
-    # Wait for one clock cycle to see the output values
-    await ClockCycles(dut.clk, 1)
+    dut.ui_in.value = 0b01010011
 
-    # The following assersion is just an example of how to check the output values.
-    # Change it to match the actual expected output of your module:
-    assert dut.uo_out.value == 50
+    await Timer(50, units="ns")
 
-    # Keep testing the module by changing the input values, waiting for
-    # one or more clock cycles, and asserting the expected output values.
+    qx = dut.uo_out.value.integer & 0x0F
+
+    assert qx == 8, f"ECC Scalar Multiplication Failed: Expected 8 Got {qx}"
+
+    print("===================================")
+    print("ECC Scalar Multiplication PASSED")
+    print("Px = 3")
+    print("k  = 5")
+    print("Qx = 8")
+    print("===================================")
