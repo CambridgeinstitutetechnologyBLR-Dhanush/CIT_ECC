@@ -19,7 +19,7 @@ jobs:
           echo "dummy log" > runs/wokwi/dummy-verilator-lint/verilator-lint.log
       
       - name: Build GDS
-        uses: TinyTapeout/tt-gds-action@ttgf26a
+        uses: TinyTapeout/tt-gds-action@main
         with:
           pdk: sky130A
 
@@ -28,8 +28,7 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: Run Tiny Tapeout Precheck
-        uses: TinyTapeout/tt-gds-action/precheck@ttgf26a
-
+        uses: TinyTapeout/tt-gds-action@main
   gl_test:
     needs: gds
     runs-on: ubuntu-24.04
@@ -40,7 +39,7 @@ jobs:
           submodules: recursive
 
       - name: GL test
-        uses: TinyTapeout/tt-gds-action/gl_test@ttgf26a
+        uses: TinyTapeout/tt-gds-action@main
 
   viewer:
     needs: gds
@@ -49,4 +48,4 @@ jobs:
       pages: write      # to deploy to Pages
       id-token: write   # to verify the deployment originates from an appropriate source
     steps:
-      - uses: TinyTapeout/tt-gds-action/viewer@ttgf26a
+      - uses: TinyTapeout/tt-gds-action@main
