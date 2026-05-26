@@ -1,25 +1,15 @@
+yaml_version: 6
+
 project:
-  wokwi_id: 0
-
-  top_module: tt_um_ecc_scalar
-
-  source_files:
-    - tt_um_ecc_scalar.v
-
-  language: verilog
-
-  description: ECC Scalar Multiplication ASIC
-
-  author: Dhanush Kulkarni
-
-  title: ECC Scalar Multiplier
-
+  title: "ECC Scalar Multiplier"
+  author: "Dhanush Kulkarni"
+  description: "ECC Scalar Multiplication ASIC using TinyTapeout"
+  language: "Verilog"
   clock_hz: 100000000
 
   tiles: "1x1"
 
-  analog_pins: 0
+  top_module: "tt_um_ecc_scalar"
 
-  uses_3v3: false
-
-  submitted_to_fab: false
+  source_files:
+    - "tt_um_e
