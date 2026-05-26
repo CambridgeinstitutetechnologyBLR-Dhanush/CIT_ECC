@@ -1,42 +1,150 @@
-![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg) ![](../../workflows/test/badge.svg) ![](../../workflows/fpga/badge.svg)
+# ECC Scalar Multiplication Accelerator
 
-# Tiny Tapeout Verilog Project Template
+## TinyTapeout 1x1 Tile ASIC Project
 
-- [Read the documentation for project](docs/info.md)
+This project implements a compact ECC-inspired Scalar Multiplication Accelerator designed for TinyTapeout ASIC implementation using Verilog HDL.
 
-## What is Tiny Tapeout?
+The design demonstrates:
+- ECC scalar processing
+- public key style generation
+- secure cryptographic datapath concepts
+- RTL-to-GDS ASIC implementation flow
 
-Tiny Tapeout is an educational project that aims to make it easier and cheaper than ever to get your digital and analog designs manufactured on a real chip.
+---
 
-To learn more and get started, visit https://tinytapeout.com.
+# Project Overview
 
-## Set up your Verilog project
+The accelerator performs a simplified ECC-style operation:
 
-1. Add your Verilog files to the `src` folder.
-2. Edit the [info.yaml](info.yaml) and update information about your project, paying special attention to the `source_files` and `top_module` properties. If you are upgrading an existing Tiny Tapeout project, check out our [online info.yaml migration tool](https://tinytapeout.github.io/tt-yaml-upgrade-tool/).
-3. Edit [docs/info.md](docs/info.md) and add a description of your project.
-4. Adapt the testbench to your design. See [test/README.md](test/README.md) for more information.
+Q = P + k
 
-The GitHub action will automatically build the ASIC files using [LibreLane](https://www.zerotoasiccourse.com/terminology/librelane/).
+Where:
+- P = input elliptic curve point
+- k = scalar/private key
+- Q = generated output/public key
 
-## Enable GitHub actions to build the results page
+This lightweight implementation is optimized for:
+- TinyTapeout 1x1 tile area
+- SKY130 ASIC flow
+- OpenLane RTL-to-GDS flow
+- educational cryptographic hardware demonstration
 
-- [Enabling GitHub Pages](https://tinytapeout.com/faq/#my-github-action-is-failing-on-the-pages-part)
+---
 
-## Resources
+# Features
 
-- [FAQ](https://tinytapeout.com/faq/)
-- [Digital design lessons](https://tinytapeout.com/digital_design/)
-- [Learn how semiconductors work](https://tinytapeout.com/siliwiz/)
-- [Join the community](https://tinytapeout.com/discord)
-- [Build your design locally](https://www.tinytapeout.com/guides/local-hardening/)
+- TinyTapeout compatible
+- Compact 1x1 tile implementation
+- Verilog RTL design
+- OpenLane compatible
+- GTKWave simulation support
+- ASIC synthesis ready
+- Low-area ECC-inspired datapath
 
-## What next?
+---
 
-- [Submit your design to the next shuttle](https://app.tinytapeout.com/).
-- Edit [this README](README.md) and explain your design, how it works, and how to test it.
-- Share your project on your social network of choice:
-  - LinkedIn [#tinytapeout](https://www.linkedin.com/search/results/content/?keywords=%23tinytapeout) [@TinyTapeout](https://www.linkedin.com/company/100708654/)
-  - Mastodon [#tinytapeout](https://chaos.social/tags/tinytapeout) [@matthewvenn](https://chaos.social/@matthewvenn)
-  - X (formerly Twitter) [#tinytapeout](https://twitter.com/hashtag/tinytapeout) [@tinytapeout](https://twitter.com/tinytapeout)
-  - Bluesky [@tinytapeout.com](https://bsky.app/profile/tinytapeout.com)
+# Module Description
+
+| Module | Function |
+|--------|-----------|
+| tt_um_ecc_scalar | Top-level ECC scalar accelerator |
+
+---
+
+# IO Mapping
+
+## Inputs
+
+| Pin | Description |
+|-----|-------------|
+| ui_in[3:0] | ECC point input Px |
+| ui_in[7:4] | Scalar key k |
+
+## Outputs
+
+| Pin | Description |
+|-----|-------------|
+| uo_out[3:0] | ECC output Qx |
+| uio_out[0] | done signal |
+
+---
+
+# Functional Operation
+
+Example:
+
+| Input | Value |
+|------|------|
+| Px | 3 |
+| k | 5 |
+
+Output:
+
+Qx = 8
+
+---
+
+# Simulation
+
+## Compile
+
+```bash
+iverilog -o ecc_out tt_um_ecc_scalar.v tb.v
+```
+
+## Run
+
+```bash
+vvp ecc_out
+```
+
+## Open Waveform
+
+```bash
+gtkwave tb.vcd
+```
+
+---
+
+# ASIC Flow
+
+This project supports:
+- RTL Simulation
+- Verilog Synthesis
+- OpenLane Physical Design
+- SKY130 Standard Cell Mapping
+- GDSII Generation
+
+---
+
+# Tools Used
+
+- Verilog HDL
+- Icarus Verilog
+- GTKWave
+- OpenLane
+- OpenROAD
+- Yosys
+- SKY130 PDK
+
+---
+
+# Applications
+
+- Secure V2X Communication
+- Cryptographic Hardware Education
+- ASIC Design Learning
+- ECC Accelerator Demonstration
+- Embedded Security Systems
+
+---
+
+# Author
+
+Dhanush Kulkarni
+
+---
+
+# License
+
+Apache-2.0
