@@ -12,16 +12,9 @@ jobs:
         uses: actions/checkout@v6
         with:
           submodules: recursive
-
-      - name: Create dummy lint log
-        run: |
-          mkdir -p runs/wokwi/dummy-verilator-lint
-          echo "dummy log" > runs/wokwi/dummy-verilator-lint/verilator-lint.log
       
       - name: Build GDS
         uses: TinyTapeout/tt-gds-action@main
-        env:
-          LINTER_LOG: runs/wokwi/dummy-verilator-lint/verilator-lint.log
         with:
           pdk: sky130A
 
