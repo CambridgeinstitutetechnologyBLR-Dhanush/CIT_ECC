@@ -1,8 +1,8 @@
-# ECC Scalar Multiplication Accelerator
+# ECC Scalar Multiplication 
 
 ## TinyTapeout 1x1 Tile ASIC Project
 
-This project implements a compact ECC-inspired Scalar Multiplication Accelerator designed for TinyTapeout ASIC implementation using Verilog HDL.
+This project implements a compact ECC-inspired Scalar Multiplication  designed for TinyTapeout ASIC implementation using Verilog HDL.
 
 The design demonstrates:
 - ECC scalar processing
