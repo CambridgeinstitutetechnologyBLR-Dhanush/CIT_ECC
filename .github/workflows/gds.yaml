@@ -20,6 +20,8 @@ jobs:
       
       - name: Build GDS
         uses: TinyTapeout/tt-gds-action@main
+        env:
+          LINTER_LOG: runs/wokwi/dummy-verilator-lint/verilator-lint.log
         with:
           pdk: sky130A
 
