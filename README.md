@@ -1,3 +1,9 @@
+[![gds](https://github.com/CambridgeinstitutetechnologyBLR-Dhanush/CIT_ECC/actions/workflows/gds.yaml/badge.svg)](https://github.com/CambridgeinstitutetechnologyBLR-Dhanush/CIT_ECC/actions/workflows/gds.yaml)
+
+[![docs](https://github.com/CambridgeinstitutetechnologyBLR-Dhanush/CIT_ECC/actions/workflows/docs.yaml/badge.svg)](https://github.com/CambridgeinstitutetechnologyBLR-Dhanush/CIT_ECC/actions/workflows/docs.yaml)
+
+[![test](https://github.com/CambridgeinstitutetechnologyBLR-Dhanush/CIT_ECC/actions/workflows/test.yaml/badge.svg)](https://github.com/CambridgeinstitutetechnologyBLR-Dhanush/CIT_ECC/actions/workflows/test.yaml)
+
 # ECC Scalar Multiplication
 
 ## TinyTapeout 1x1 Tile ASIC Project
