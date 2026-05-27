@@ -3,6 +3,7 @@ yaml_version: 6
 project:
   title: "ECC Scalar Multiplication"
   author: "Dhanush Kulkarni"
+  discord: ""
   description: "ECC scalar multiplication accelerator"
   language: "Verilog"
   clock_hz: 1000000
@@ -42,4 +43,4 @@ pinout:
   uio[6]: "bidirectional"
   uio[7]: "bidirectional"
 
-yaml_version_comment: "Tiny Tapeout project configuration"
+yaml_version_comment: "Tiny Tapeout configuration"
